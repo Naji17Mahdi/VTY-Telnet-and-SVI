@@ -1,0 +1,13 @@
+Switch>enable
+Switch#configure
+Switch(config)#line vty 0
+Switch(config-line)#login local
+Switch(config-line)#transport input telnet
+Switch(config-line)#exit 
+Switch(config)#username Admin secret 123
+Switch(config)#enable secret 123
+Switch(config)#interface vlan 1
+Switch(config-if)#no shutdown
+Switch(config-if)#ip address 192.168.1.1 255.255.255.0
+
+IN PC: 192.168.1.2 255.255.255.0 + telnet 192.168.1.1
